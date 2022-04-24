@@ -1,7 +1,9 @@
 package com.programmerdat.chatbot;
 
 public class Message {
-    private Boolean type;
+    // Type 0 for sent, 1 for received
+    private boolean type;
+    // Message content
     private String message;
 
     public Message(boolean type, String message) {
@@ -13,15 +15,8 @@ public class Message {
         return message;
     }
 
-    public Boolean getType() {
-        return type;
+    public boolean getType() {
+        return this.type;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setType(Boolean type) {
-        this.type = type;
-    }
 }

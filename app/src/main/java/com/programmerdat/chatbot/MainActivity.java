@@ -40,21 +40,18 @@ public class MainActivity extends AppCompatActivity {
         adapter = new recyclerAdapter(messages);
         recyclerView.setAdapter(adapter);
 
-        sendButton = (ImageButton) findViewById(R.id.msgButton);
-        msgInput = (EditText) findViewById(R.id.msgInput);
+        sendButton = findViewById(R.id.msgButton);
+        msgInput = findViewById(R.id.msgInput);
 
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String message = msgInput.getText().toString();
-                if(message.length() != 0){
-                    messages.add(new Message(true, message));
-                    int newPosition = messages.size() - 1;
-                    adapter.notifyItemInserted(newPosition);
-                    recyclerView.scrollToPosition(newPosition);
-                    msgInput.setText("");
-                    getReply(message);
-                }
+        sendButton.setOnClickListener(v -> {
+            String message = msgInput.getText().toString();
+            if(message.length() != 0){
+                messages.add(new Message(true, message));
+                int newPosition = messages.size() - 1;
+                adapter.notifyItemInserted(newPosition);
+                recyclerView.scrollToPosition(newPosition);
+                msgInput.setText("");
+                getReply(message);
             }
         });
 

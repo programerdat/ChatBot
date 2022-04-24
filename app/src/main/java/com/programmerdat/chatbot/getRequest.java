@@ -6,7 +6,6 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -16,8 +15,8 @@ import org.json.JSONObject;
 public class getRequest {
     private RequestQueue queue;
     private String reply;
-    private String APIkey = "";
-    private String brainID = "";
+    private String APIkey = "7v5lWMSs325zQUPE";
+    private String brainID = "165273";
     private char[] illegalChars = {'#', '<', '>', '$', '+', '%', '!', '`', '&',
             '*', '\'', '\"', '|', '{', '}', '/', '\\', ':', '@'};
 
